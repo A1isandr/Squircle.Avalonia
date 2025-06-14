@@ -1,0 +1,29 @@
+﻿<ResourceDictionary xmlns="https://github.com/avaloniaui"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:squircle="https://github.com/A1isandr/Squircle.Avalonia">
+    
+    <ControlTheme x:Key="{x:Type squircle:Squircle}" TargetType="squircle:Squircle">
+        <Setter Property="HorizontalContentAlignment" Value="Center"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+        <Setter Property="Padding" Value="0"/>
+        
+        <Setter Property="Template">
+            <ControlTemplate>
+                <Panel>
+                    <squircle:SquircleImpl
+                        CornerRadius="{TemplateBinding CornerRadius}"
+                        CornerSmoothing="{TemplateBinding CornerSmoothing}"
+                        PreserveSmoothing="{TemplateBinding PreserveSmoothing}"/>
+                    
+                    <ContentPresenter x:Name="PART_ContentPresenter"
+                                      Content="{TemplateBinding Content}"
+                                      ContentTemplate="{TemplateBinding ContentTemplate}"
+                                      HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                      VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
+                                      Background="{TemplateBinding Background}"
+                                      Margin="{TemplateBinding Padding}"/>
+                </Panel>
+            </ControlTemplate>
+        </Setter>
+    </ControlTheme>
+</ResourceDictionary>
