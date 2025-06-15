@@ -7,7 +7,7 @@
     <Application.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
-                <ResourceInclude Source="avares://Squircle.Avalonia/Controls/SquircleBorder.axaml"/>
+                <ResourceInclude Source="avares://Squircle.Avalonia/Controls/Squircle.axaml"/>
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Application.Resources>
