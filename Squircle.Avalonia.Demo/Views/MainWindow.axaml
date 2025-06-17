@@ -10,18 +10,169 @@
         Icon="/Assets/avalonia-logo.ico"
         Title="Squircle.Avalonia.Demo"
         Width="800"
-        Height="600">
+        Height="600"
+        MinWidth="400"
+        MinHeight="300"
+        Background="#121212">
 
+    <Window.Styles>
+        <Style Selector="TextBlock">
+            <Setter Property="VerticalAlignment" Value="Center"/>
+        </Style>
+    </Window.Styles>
+    
     <Panel>
-        <squircle:Squircle
-            Width="100"
-            Height="100"
-            CornerRadius="20"
-            PreserveSmoothing="True"
-            Background="DarkSlateBlue">
+        <Grid
+            ColumnDefinitions="*, Auto">
             
-            <Button
-                Content="Squircle!"/>
-        </squircle:Squircle>
+            <Border x:Name="Border"
+                    Grid.Column="0"
+                    Width="{Binding #SquircleWidthTextBox.Text}"
+                    Height="{Binding #SquircleHeightTextBox.Text}"
+                    CornerRadius="{Binding #Squircle.CornerRadius}"
+                    Background="Red"
+                    IsVisible="{Binding #SquircleDifferenceCheckBox.IsChecked, Mode=TwoWay}">
+                
+                <Border.Transitions>
+                    <Transitions>
+                        <DoubleTransition
+                            Property="Width"
+                            Duration="0.2"
+                            Easing="QuadraticEaseInOut"/>
+                        
+                        <DoubleTransition
+                            Property="Height"
+                            Duration="0.2"
+                            Easing="QuadraticEaseInOut"/>
+                        
+                        <CornerRadiusTransition
+                            Property="CornerRadius"
+                            Duration="0.2"
+                            Easing="QuadraticEaseInOut"/>
+                    </Transitions>
+                </Border.Transitions>
+            </Border>
+            
+            <squircle:Squircle x:Name="Squircle"
+                Grid.Column="0"
+                Width="{Binding #SquircleWidthTextBox.Text}"
+                Height="{Binding #SquircleHeightTextBox.Text}"
+                PreserveSmoothing="{Binding #SquirclePreserveSmoothingCheckBox.IsChecked, Mode=TwoWay}">
+                
+                <squircle:Squircle.Background>
+                    <LinearGradientBrush StartPoint="0% 0%" EndPoint="100% 100%">
+                        <GradientStop Color="#23A7FF" Offset="0"/>
+                        <GradientStop Color="#4E4FFF" Offset="1"/>
+                    </LinearGradientBrush>
+                </squircle:Squircle.Background>
+                
+                <squircle:Squircle.Transitions>
+                    <Transitions>
+                        <DoubleTransition
+                            Property="Width"
+                            Duration="0.2"
+                            Easing="QuadraticEaseInOut"/>
+                        
+                        <DoubleTransition
+                            Property="Height"
+                            Duration="0.2"
+                            Easing="QuadraticEaseInOut"/>
+                        
+                        <CornerRadiusTransition
+                            Property="CornerRadius"
+                            Duration="0.2"
+                            Easing="QuadraticEaseInOut"/>
+                    </Transitions>
+                </squircle:Squircle.Transitions>
+                
+                <Image
+                    Source="/Assets/avalonia-logo.ico"
+                    IsVisible="{Binding #SquircleShowImage.IsChecked, Mode=TwoWay}"/>
+            </squircle:Squircle>
+            
+            <squircle:Squircle
+                Grid.Column="1"
+                Width="300"
+                CornerRadius="20"
+                ClipToBounds="True"
+                HorizontalContentAlignment="Stretch"
+                VerticalContentAlignment="Stretch"
+                Background="rgba(255, 255, 255, 0.2)"
+                Padding="20"
+                Margin="10">
+                
+                <StackPanel
+                    Orientation="Vertical"
+                    Spacing="10">
+                    
+                    <TextBlock
+                        Text="Options"
+                        FontSize="24"
+                        FontWeight="Bold"
+                        TextAlignment="Center"
+                        Margin="0, 0, 0, 20"/>
+                    
+                    <Grid
+                        ColumnDefinitions="*, Auto, *"
+                        ColumnSpacing="5">
+                        
+                        <TextBox x:Name="SquircleWidthTextBox"
+                                 Grid.Column="0"
+                                 Watermark="Width"
+                                 UseFloatingWatermark="True"
+                                 Text="200"/>
+                        
+                        <TextBlock
+                            Grid.Column="1"
+                            Text="X"/>
+                        
+                        <TextBox x:Name="SquircleHeightTextBox"
+                                 Grid.Column="2"
+                                 Watermark="Height"
+                                 UseFloatingWatermark="True"
+                                 Text="200"/>
+                    </Grid>
+                    
+                    <TextBox x:Name="SquircleCornerRadiusTextBox"
+                        Watermark="Corner Radius"
+                        UseFloatingWatermark="True"
+                        Text="40,40,40,40"/>
+                    
+                    <Grid
+                        ColumnDefinitions="Auto, *, Auto"
+                        ColumnSpacing="5">
+                        
+                        <TextBlock
+                            Grid.Column="0"
+                            Text="Smoothing:"/>
+                        
+                        <Slider x:Name="SquircleCornerSmoothingSlider"
+                                Grid.Column="1"
+                                Minimum="0"
+                                Maximum="1"
+                                Value="0.6"
+                                Ticks="0.6"/>
+                        
+                        <TextBlock
+                            Grid.Column="2"
+                            Width="30"
+                            Text="{Binding #SquircleCornerSmoothingSlider.Value, Mode=TwoWay, StringFormat=0.##}"
+                            TextAlignment="Center"/>
+                    </Grid>
+                    
+                    <CheckBox x:Name="SquirclePreserveSmoothingCheckBox"
+                              Content="Preserve Smoothing"
+                              IsChecked="False"/>
+                    
+                    <CheckBox x:Name="SquircleDifferenceCheckBox"
+                              Content="Comparison with Border"
+                              IsChecked="False"/>
+                    
+                    <CheckBox x:Name="SquircleShowImage"
+                              Content="Show Image"
+                              IsChecked="False"/>
+                </StackPanel>
+            </squircle:Squircle>
+        </Grid>
     </Panel>
 </Window>
