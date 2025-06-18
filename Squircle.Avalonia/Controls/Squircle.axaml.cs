@@ -3,6 +3,9 @@ using Avalonia.Controls;
 
 namespace Squircle.Avalonia.Controls;
 
+/// <summary>
+/// Squircle control.
+/// </summary>
 public class Squircle : ContentControl
 {
     /// <summary>
@@ -37,7 +40,8 @@ public class Squircle : ContentControl
     /// even when there is not enough space.
     /// </summary>
     /// <remarks>
-    /// Experimental. May cause artifacts. Default value is false.
+    /// Experimental. May cause artifacts when used with high corner smoothing.
+    /// Default value is false.
     /// </remarks>
     public bool PreserveSmoothing
     {
