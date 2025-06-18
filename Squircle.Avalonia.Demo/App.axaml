@@ -3,7 +3,7 @@
              xmlns:squircle="https://github.com/A1isandr/Squircle.Avalonia"
              x:Class="Squircle.Avalonia.Demo.App"
              xmlns:local="using:Squircle.Avalonia.Demo"
-             RequestedThemeVariant="Light">
+             RequestedThemeVariant="Dark">
     
     <Application.DataTemplates>
         <local:ViewLocator/>

@@ -12,7 +12,8 @@
         Width="800"
         Height="600"
         MinWidth="400"
-        MinHeight="300">
+        MinHeight="300"
+        Background="#1C1C1C">
 
     <Window.Styles>
         <Style Selector="TextBlock">
