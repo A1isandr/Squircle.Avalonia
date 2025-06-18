@@ -3,7 +3,7 @@
 <div align="center">
   <img src="https://github.com/user-attachments/assets/27ac857f-afbf-449b-a2af-7a6588fb5380">
 
-  <h3>Figma's squircle implementation brought to Avalonia!</h3>
+  <h3>Figma's squircle brought to Avalonia!</h3>
 </div>
 
 ## Features
@@ -43,7 +43,7 @@ Now you can draw Squircles by providing `xmlns:squircle="https://github.com/A1is
 ```
 After that you should see nice blue squircle on screen.
 
-# Demo App
+## Demo App
 
 <div align="center">
   <img src="https://github.com/user-attachments/assets/e78f581a-c8ca-486c-b69b-252b3bfed709">
