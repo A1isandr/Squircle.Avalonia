@@ -12,8 +12,7 @@
         Width="800"
         Height="600"
         MinWidth="400"
-        MinHeight="300"
-        Background="#121212">
+        MinHeight="300">
 
     <Window.Styles>
         <Style Selector="TextBlock">
@@ -97,7 +96,7 @@
                 ClipToBounds="True"
                 HorizontalContentAlignment="Stretch"
                 VerticalContentAlignment="Stretch"
-                Background="rgba(255, 255, 255, 0.2)"
+                Background="#809E9E9E"
                 Padding="20"
                 Margin="10">
                 
