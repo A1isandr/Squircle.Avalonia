@@ -43,6 +43,14 @@ Now you can draw Squircles by providing `xmlns:squircle="https://github.com/A1is
 ```
 After that you should see nice blue squircle on screen.
 
+# Demo App
+
+<div align="center">
+  <img src="https://github.com/user-attachments/assets/e78f581a-c8ca-486c-b69b-252b3bfed709">
+</div>
+
+There is simple demo app where main features can be tested. It needs to be compiled from sources, no precompiled binaries provided at this moment.
+
 ## Credits
 
 - Figma's [article](https://figma.com/blog/desperately-seeking-squircles/) about squircles.
