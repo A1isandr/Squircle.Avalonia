@@ -9,7 +9,7 @@
 ## Features
 
 - Squircles!
-- Corner Smoothing. You can choose smoothing you like, from `0` (no smoothing, basic rounded corners) to `1` (super smooth). Default value is `0.6` which is closest to IOS icons shape.
+- Corner Smoothing. You can choose smoothing you like, from `0` (no smoothing, basic rounded corners) to `1` (super smooth). Default value is `0.6` which is closest to iOS icons shape.
 - Preserve Smoothing. When setting huge corner radius and there is not enough space for rounding and smoothing, this feature might come in handy if you want more pronounced results.
   
   > This feature is experimental and may give unexpected results when using with high Corner Smoothing.
